@@ -1,8 +1,13 @@
+
+
+# install jenkins by docker inside docker: map volume of Daemon host to Daemon container
+docker run --name jenkins2 --privileged=true -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+
 # install jenkins by docker expose 2 port 8000 and 50000
 docker run --name jenkins -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
 
-# install jenkins by docker to install docker inside docker
-docker run --name jenkins2 --privileged=true -d -v /var/run/docker.sock:/var/run/docker.sock -p 8081:8080 -p 50001:50000 jenkins/jenkins:lts
+
 
 
 # login by user root to docker

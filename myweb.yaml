@@ -6,7 +6,7 @@ metadata:
     app: myweb
   name: myweb
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: myweb
@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 172.16.10.1:5000/frontend/myweb:6
+      - image: 172.16.10.1:5000/frontend/myweb:7
         imagePullPolicy: Always
         name: myweb
 

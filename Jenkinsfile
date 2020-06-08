@@ -36,6 +36,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
+          sh '''sed -i "s/docker_tag/$BUILD_NUMBER/g"  myweb.yaml'''
           kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "Fintech-kubeconfig")
         }
       }
